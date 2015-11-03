@@ -1,0 +1,22 @@
+{
+  "name": "utils",
+  "description": "后台Node库",
+  "version": "0.1.0",
+  "main": "index.js",
+  "contributors": [
+    "GusonYang <guson.yang@gmail.com>"
+  ],
+  "keywords": [
+    "utils",
+    "工具类"
+  ],
+  "license": "MIT",
+  "repository": "gusonyang/node-utils",
+  "dependencies": {
+    "bluebird": "^3.0.5",
+    "cookie-signature": "^1.0.6",
+    "moment": "^2.10.6",
+    "qiniu": "^6.1.8",
+    "request": "^2.65.0"
+  }
+}
