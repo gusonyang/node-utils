@@ -28,6 +28,9 @@ var utils = {
             ip: "115.28.225.82",
             host: "/FeieServer"
         },
+        middleware: {
+            templates_path: ''
+        }
     }
 };
 
@@ -120,6 +123,28 @@ utils.qiniu = function () {
         qiniu = require('./lib/qiniu')(utils.config.qiniu);
     }
     return qiniu;
+}
+
+/**
+ * 中间件
+ */
+var middleware;
+utils.middleware = function () {
+    if (!middleware) {
+        middleware = require('./lib/middleware')(utils.config.middleware, utils);
+    }
+    return middleware;
+}
+
+/**
+ * 路由
+ */
+var route;
+utils.route = function (app) {
+    if (!route) {
+        route = require('./lib/route')(utils);
+    }
+    return route(app);
 }
 
 /**
