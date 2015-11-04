@@ -89,7 +89,7 @@ utils.common = function () {
     if (!common) {
         common = require('./lib/common')(utils.config);
     }
-    return moment;
+    return common;
 };
 
 /**
