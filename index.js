@@ -30,6 +30,9 @@ var utils = {
         },
         middleware: {
             templates_path: ''
+        },
+        pois: {
+            place_host: 'http://api.map.baidu.com'
         }
     }
 };
@@ -145,6 +148,18 @@ utils.route = function (app) {
         route = require('./lib/route')(utils);
     }
     return route(app);
+}
+
+
+/**
+ * pois
+ */
+var pois;
+utils.pois = function (app) {
+    if (!pois) {
+        pois = require('./lib/pois')(utils.config.pois, utils);
+    }
+    return pois;
 }
 
 /**
