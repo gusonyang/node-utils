@@ -155,7 +155,7 @@ utils.route = function (app) {
  * pois
  */
 var pois;
-utils.pois = function (app) {
+utils.pois = function () {
     if (!pois) {
         pois = require('./lib/pois')(utils.config.pois, utils);
     }
