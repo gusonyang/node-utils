@@ -32,7 +32,9 @@ var utils = {
             templates_path: ''
         },
         pois: {
-            place_host: 'http://api.map.baidu.com'
+            place_host: 'http://api.map.baidu.com',
+            ak: '',
+            stores_geotable_id: 0
         }
     }
 };
