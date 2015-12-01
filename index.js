@@ -33,8 +33,11 @@ var utils = {
         },
         pois: {
             place_host: 'http://api.map.baidu.com',
-            ak: '',
+            ak: 'd2Hcn75zClb0XgO8gx08R6Lq',
             stores_geotable_id: 0
+        },
+        fetch:{
+            images: 'http://kostudio.duapp.com/fetch_goods'
         }
     }
 };
@@ -106,6 +109,17 @@ utils.sms = function () {
         sms = require('./lib/sms')(utils.config.sms, utils);
     }
     return sms;
+};
+
+/**
+ * 发送消息
+ */
+var fetch;
+utils.fetch = function () {
+    if (!fetch) {
+        fetch = require('./lib/fetch')(utils.config.fetch, utils);
+    }
+    return fetch;
 };
 
 /**
