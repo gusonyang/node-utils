@@ -36,7 +36,7 @@ var utils = {
             ak: 'd2Hcn75zClb0XgO8gx08R6Lq',
             stores_geotable_id: 0
         },
-        fetch:{
+        fetch: {
             images: 'http://kostudio.duapp.com/fetch_goods'
         }
     }
@@ -187,6 +187,11 @@ utils.dicts = require('./lib/dicts');
  * 设置
  */
 utils.settings = require('./lib/settings');
+
+/**
+ * 文本
+ */
+utils.texts = require('./lib/texts');
 
 /**
  * 坐标
