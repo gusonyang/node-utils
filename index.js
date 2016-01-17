@@ -1,54 +1,11 @@
 var utils = {
-    /**
-     * 配置
-     */
-    config: {
-        secret: '',
-        debug: {
-            filter: 'sms,print',
-            error_handle: false
-        },
-        moment: {
-            lang: 'zh-cn',
-            date_pattern: 'YYYY-MM-DD',
-            time_pattern: 'YYYY-MM-DD HH:mm'
-        },
-        sms: {
-            platform: 'yunpian',
-            app: '',
-            key: ''
-        },
-        qiniu: {
-            AccessKey: '',
-            SecretKey: '',
-            bucket: '',
-            domain: ''
-        },
-        print: {
-            ip: "115.28.225.82",
-            host: "/FeieServer"
-        },
-        middleware: {
-            templates_path: ''
-        },
-        pois: {
-            place_host: 'http://api.map.baidu.com',
-            ak: 'd2Hcn75zClb0XgO8gx08R6Lq',
-            stores_geotable_id: 0
-        },
-        fetch: {
-            images: 'http://kostudio.duapp.com/fetch_goods'
-        }
-    }
+    config: require('./config')
 };
 
 /**
  * 调试
- * @param type
- * @returns {*}
  */
-var debugs = {};
-var debugs_namespaces;
+var debugs = {}, debugs_namespaces;
 utils.debug = function (namespace) {
     if (!debugs_namespaces) {
         debugs_namespaces = {};
@@ -61,7 +18,7 @@ utils.debug = function (namespace) {
     if (!debugs[namespace]) {
         debugs[namespace] = {
             namespace: namespace,
-            enable: debugs_namespaces[namespace],
+            enable: (!debugs_namespaces[namespace]),
             log: function (log) {
                 if (!this.enable) return;
                 console.log(this.namespace, log);
@@ -112,7 +69,7 @@ utils.sms = function () {
 };
 
 /**
- * 发送消息
+ * 抓取图片
  */
 var fetch;
 utils.fetch = function () {
