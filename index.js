@@ -28,7 +28,11 @@ utils.debug = function (namespace) {
                 if (handle) {
                     handle(this.namespace, err);
                 }
-                console.error(this.namespace, err);
+                if (err.stack) {
+                    console.error(this.namespace, err.stack);
+                } else {
+                    console.error(this.namespace, err);
+                }
             }
         }
     }
