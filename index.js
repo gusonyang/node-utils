@@ -1,5 +1,5 @@
 var utils = {
-    config: require('./config')
+    config: {}
 };
 
 /**

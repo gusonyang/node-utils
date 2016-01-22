@@ -46,4 +46,4 @@ var test = {
 /**
  * 导出config
  */
-module.exports = (process.env.NODE_ENV == 'production') ? {} : test;
+module.exports = test;
