@@ -1,5 +1,12 @@
 var utils = {
-    config: {}
+    config: {
+        moment: {
+            lang: 'zh-cn',
+            time_pattern: 'HH:mm',
+            date_pattern: 'YYYY-MM-DD',
+            datetime_pattern: 'YYYY-MM-DD HH:mm'
+        }
+    }
 };
 
 /**
