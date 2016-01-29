@@ -34,11 +34,11 @@ var test = {
     },
     pois: {
         place_host: 'http://api.map.baidu.com',
-        ak: 'MZogKNZUGvUnZMWzhYxRWkG5',
+        ak: '',
         region: '深圳',
         pois_sources: ['ele', 'baidu', 'lbsyun'],
-        stores_geotable_id: 127979,
-        regions_geotable_id: 127976
+        stores_geotable_id: 0,
+        regions_geotable_id: 0
     },
     fetch: {
         images: 'http://kostudio.duapp.com/fetch_goods'
